@@ -1,0 +1,21 @@
+[project]
+name = "richery"
+version = "0.1.0"
+description = "Supercharged rich text renderer based on Pillow"
+authors = [
+    {name = "HivertMoZara", email = "worldmozara@163.com"},
+]
+license = {text = "MIT"}
+dependencies = [
+    "Pillow>=9.4"
+]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/NCBM/richery-pil"
+Repository = "https://github.com/NCBM/richery-pil"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
