@@ -73,7 +73,7 @@ class Rect(NamedTuple):
     def remap(self, *rect: "Rect") -> "Rect":
         """Remap this rectangle to another rectangle"""
         return reduce(self._remap, (self, *rect))
-    
+
     def __contains__(self, point: Tuple[int, int]) -> bool:
         _x, _y = point
         return (
@@ -144,7 +144,7 @@ class FontFamily:
         ext = tuple(x for x in self._tuple() if x is not None)
         _font = self.Regular if font is None else font
         found = ext.index(_font) + delta
-        return ext[max(0, min(len(ext), found))]
+        return ext[max(0, min(len(ext) - 1, found))]
 
     def __getitem__(self, _i: int) -> GenericFont:
         if 0 <= _i < 10:
@@ -152,7 +152,7 @@ class FontFamily:
         if 100 <= _i <= 900:
             return self._select(round(_i / 100))
         raise IndexError("font index only supports [0..9] and [100..900]")
-    
+
     def __add__(self, other: int) -> GenericFont:
         return self.find_relative_font(other)
 

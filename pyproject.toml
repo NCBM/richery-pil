@@ -1,6 +1,6 @@
 [project]
 name = "richery"
-version = "0.1.0"
+version = "0.1.1"
 description = "Supercharged rich text renderer based on Pillow"
 authors = [
     {name = "HivertMoZara", email = "worldmozara@163.com"},
